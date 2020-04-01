@@ -1,11 +1,15 @@
 body{
-	background: black;
-	height: 100vh;
-	margin: 0;
+    background: rgb(30, 30, 40);
+    color: wheat;
+    letter-spacing: 1px;
+}
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+div{
+    box-sizing: border-box;
+}
 
-	color: lightblue;
+a{
+    color: lightblue;
+    text-decoration: none;
+    font-weight: bold;
 }

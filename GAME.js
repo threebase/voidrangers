@@ -11,15 +11,6 @@ module.exports = function( init ){
 
 }
 
-
-
-
-
-
-
-
-
-
 class Game {
 
 	constructor( init ){

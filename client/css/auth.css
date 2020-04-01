@@ -1,0 +1,38 @@
+#account-warning{
+	position: fixed;
+	bottom: 25%;
+	color: red;
+}
+
+body{
+	height: 100vh;
+	margin: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#auth-header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+}
+
+#menu-toggle{
+	font-size: 2rem;
+}
+
+#auth-links{
+	position: absolute;
+    text-align: right;
+    right: 10px;
+    top: 10px;
+}
+
+.auth-link{
+	padding: 5px 0px;
+}
+

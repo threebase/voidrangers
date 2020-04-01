@@ -6,6 +6,8 @@ module.exports = class User {
 		
 		init = init || {}
 
+		this.vrid = init.vrid
+
 		this.name = 'person' + Math.random() * 1000
 
 	}

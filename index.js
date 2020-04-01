@@ -27,7 +27,7 @@ const WSS = require('./Server.js')()
 const User = require('./User.js')
 const Game = require('./GAME.js')({})
 
-
+const render_html = require('./client/render_html.js')
 
 // INITIALIZATION
 const exp = new express()
@@ -97,11 +97,39 @@ exp.use( gatekeep )
 
 // routing
 exp.get('/', function(request, response) {
-	if( request.session.USER.uuid ){
-		response.status( 200 ).send('<html><style>body{background: black; color: green; font-size: 2rem;}</style><body>authenticated login</body></html>')
+	if( request.session.USER.vrid ){
+		response.status( 200 ).send(`
+			<html>
+			<style>body{ background: black; color: green; font-size: 2rem; }</style>
+			<body>authenticated login .... </body>
+			</html>
+		`)
 	}else{
-		response.status( 200 ).sendFile('client/html/index.html', { root: __dirname })
+		response.send( render_html( 'index', request ) )
+		// response.status( 200 ).sendFile('client/html/index.html', { root: __dirname })
 	}
+})
+
+exp.get('/login', function(request, response){
+	response.send( render_html( 'login', request ) )
+})
+
+exp.get('/register', function(request, response){
+	response.send( render_html( 'register', request ) )
+})
+
+exp.get('/play', function(request, response){
+	response.send( render_html( 'play', request ) )
+})
+
+exp.post('/login-attempt', function( request, response){
+	log('flag', 'unhandled login attempt....')
+	response.send( render_html( 'login', request ) )
+})
+
+exp.post('/register-attempt', function( request, response){
+	log('flag', 'unhandled register attempt....')
+	response.send( render_html( 'register', request ) )
 })
 
 

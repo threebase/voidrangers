@@ -1,0 +1,50 @@
+body{
+    background: rgb(30, 30, 40);
+    color: wheat;
+}
+
+#chat{
+	position: fixed;
+	z-index: 99;
+	width: 75%;
+	height: 160px;
+	left: 12.5%;;
+	bottom: 0px;
+/* 	border: 2px solid red; */
+}
+
+#chat-content{
+	height: 140px;
+	padding: 5px;
+	background: rgba(00, 0, 00, .5);
+	overflow-y: auto;
+	padding-bottom: 15px;
+}
+
+#chat-content .speaker{
+	color: blue;
+}
+
+#chat-content .self span{
+	color: white;
+}
+
+#chat-content,
+#chat-input{
+	font-size: 13px;
+	font-family: Helvetica;
+}
+
+#chat-input{
+	width: 100%;
+	background: rgb(0, 0, 0);
+	border: 0px;
+	border-bottom: 1px solid grey;
+	line-height: 18px;
+	border: 2px solid rgb(20, 20, 30);
+	color: white;
+	padding: 0 5px;
+}
+#chat-input::placeholder{
+	color: lightgrey;
+}
